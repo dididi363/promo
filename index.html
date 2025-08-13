@@ -1,111 +1,122 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>김중희 법무사 사무소 홍보 페이지</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>법무사 김중희 사무소 | 이희준 사무장</title>
+  <meta name="description" content="부동산 등기, 법인 등기, 민사 사건 대행. 친절 상담과 신속·정확한 처리. 전화/이메일/간편 상담 신청 버튼 제공." />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Noto Sans KR', sans-serif;
-      background-color: #f4f4f4;
-      color: #222;
+    :root { --maxw: 860px; }
+    html, body { margin:0; padding:0; }
+    body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; line-height: 1.7; color: #111; background: #fff; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 28px 20px 64px; }
+    header h1 { font-size: 22px; margin: 0 0 4px; font-weight: 700; }
+    header p.sub { margin: 0 0 16px; color:#444; }
+    h2 { font-size: 20px; margin: 28px 0 12px; }
+    h3 { font-size: 18px; margin: 22px 0 10px; }
+    section { margin: 28px 0; }
+    .hero { margin-top: 8px; }
+    .hero h2 { font-size: 24px; margin: 6px 0 12px; }
+    .btns { display:flex; flex-wrap: wrap; gap:10px; margin: 12px 0 6px; }
+    .btn {
+      display:inline-block; padding:10px 14px; border:1px solid #d0d7de; border-radius:8px;
+      background:#fff; color:inherit; text-decoration:none; font-weight:600;
+      transition: background .15s ease, box-shadow .15s ease, transform .03s ease;
     }
-    header {
-      background-color: #001f3f;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    .hero {
-      background-color: #003366;
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-    .hero h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-    .cta-button {
-      background-color: #ffc107;
-      color: #222;
-      padding: 0.8rem 1.5rem;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-    .section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: white;
-      margin-top: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-    }
-    .section h3 {
-      color: #003366;
-    }
-    .contact {
-      text-align: center;
-      padding: 2rem;
-    }
-    .contact p {
-      margin: 0.3rem 0;
-    }
-    .blog-link {
-      display: inline-block;
-      margin-top: 1rem;
-      background-color: #003366;
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 4px;
-      text-decoration: none;
-    }
+    .btn:focus, .btn:hover { background:#f6f8fa; box-shadow: 0 1px 0 rgba(0,0,0,.04); }
+    .btn:active { transform: translateY(1px); }
+    .muted { color:#555; }
+    ul, ol { padding-left: 22px; }
+    .card { border:1px solid #e5e7eb; border-radius:12px; padding:16px; background:#fff; }
+    .grid { display:grid; gap:16px; }
+    @media (min-width: 768px) { .grid-cols-2 { grid-template-columns: 1fr 1fr; } }
+    .small { font-size: 14px; color:#666; }
+    footer { margin-top: 36px; border-top:1px solid #e5e7eb; padding-top:16px; color:#555; font-size:14px; }
+    .list-title { font-weight:700; margin: 6px 0; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>법무사 김중희 사무소 | 이희준 사무장</h1>
-  </header>
+  <div class="wrap">
+    <header>
+      <h1>법무사 김중희 사무소 | 이희준 사무장</h1>
+      <p class="sub">등기, 복잡하지 않게. 정확하고 신속하게.</p>
+    </header>
 
-  <section class="hero">
-    <h2>등기? 복잡하지 않게, 정확하고 신속하게.</h2>
-    <p>젊은 대표님, 셀프등기 고민 중이신가요?<br>김중희 법무사 사무소가 확실하게 도와드립니다.</p>
-    <a class="cta-button" href="#contact">간편 상담 신청</a>
-  </section>
+    <section class="hero">
+      <div class="btns">
+        <a class="btn" href="tel:01032658230">📞 바로 전화 상담</a>
+        <a class="btn" href="mailto:freelaw8230@gmail.com">✉️ 이메일 상담</a>
+        <!-- 블로그 개설 후 아래 # 을 실제 URL로 교체하세요 -->
+        <a class="btn" href="#" target="_blank" rel="noopener">📝 간편 상담 신청</a>
+      </div>
+      <p class="small muted">※ ‘간편 상담 신청’은 블로그/폼 주소가 준비되면 링크를 교체해 주세요.</p>
+    </section>
 
-  <section class="section">
-    <h3>📌 주요 서비스</h3>
-    <ul>
-      <li><strong>법인등기:</strong> 설립 / 변경 / 해산 / 합병 등</li>
-      <li><strong>부동산등기:</strong> 소유권이전 / 근저당 / 가등기 등</li>
-      <li><strong>민사 사건:</strong> 가압류 / 지급명령 / 상속포기 / 경매 등</li>
-    </ul>
-  </section>
+    <section>
+      <h2>주요 서비스</h2>
+      <div class="card grid grid-cols-2">
+        <div>
+          <div class="list-title">📌 부동산 등기</div>
+          <ul>
+            <li>소유권 이전 (매매, 상속, 증여 등)</li>
+            <li>근저당권 설정/말소</li>
+            <li>전세권 설정/말소</li>
+            <li>가등기 설정/말소</li>
+          </ul>
+        </div>
+        <div>
+          <div class="list-title">📌 법인 등기</div>
+          <ul>
+            <li><strong>설립</strong>: 주식회사, 유한회사 등 영리법인 / 사단법인, 재단법인, 영농조합, 세무법인, 의료법인, 특허법인 등</li>
+            <li><strong>변경</strong>: 자본금, 임원, 목적, 상호, 본점, 지점, 주식매수, 주식매수선택권, 종류주식 등</li>
+            <li><strong>기타</strong>: 회사 계속, 해산, 청산, 합병, 분할 등</li>
+          </ul>
+        </div>
+        <div>
+          <div class="list-title">📌 민사 사건</div>
+          <ul>
+            <li><strong>보전처분</strong>: 가압류, 가처분, 재산명시, 재산조회, 채무불이행자명부등재</li>
+            <li><strong>소송 등</strong>: 지급명령, 제소전화해, 민사소송, 고소장, 행정심판, 행정소송</li>
+            <li><strong>집행 절차</strong>: 강제경매, 임의경매, 채권압류, 추심, 전부</li>
+            <li><strong>상속 절차</strong>: 한정승인, 상속포기</li>
+            <li><strong>개인회생/파산</strong>: 개인회생, 파산 및 면책</li>
+            <li><strong>공탁</strong>: 변제공탁, 해방공탁, 집행공탁, 혼합공탁</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <section class="section">
-    <h3>🙋‍♂️ 사무장 소개</h3>
-    <p>4년차 법무사 사무장 <strong>이희준</strong>입니다.<br>
-    빠른 업무처리, 정직한 수수료, 젊은 고객들과의 원활한 소통이 저희의 강점입니다.</p>
-  </section>
+    <section>
+      <h2>진행 절차</h2>
+      <ol>
+        <li><strong>등기 진행 상담</strong> → 유선, 이메일 또는 오프라인 상담 진행</li>
+        <li><strong>필요 서류 및 날인 서류 안내</strong> → 방문 또는 직접 날인이 가능한 서류 PDF 송부</li>
+        <li><strong>등기 서류 수령 및 접수</strong> → 접수증 발급 후 진행 상황 실시간 안내</li>
+        <li><strong>등기 완료</strong> → 완료 즉시 보고, 완료 등기부등본 스캔본 즉시 이메일 송부</li>
+        <li><strong>완료 서류 송부</strong> → 등기부등본, 법인인감증명서, 영수증 등 완료 서류 일체 송부</li>
+      </ol>
+    </section>
 
-  <section class="contact" id="contact">
-    <h3>📞 문의하기</h3>
-    <p>P. 010-3265-8230</p>
-    <p>Email. freelaw8230@gmail.com</p>
-    <a class="blog-link" href="#">등기 안내 블로그 보기 →</a>
-  </section>
+    <section>
+      <h2>사무장 소개</h2>
+      <div class="card">
+        <p><strong>이희준 사무장</strong></p>
+        <p>고객 입장에서 생각하는 <strong>친절한 상담</strong>과 <strong>신속·정확한 업무 처리</strong>를 최우선으로 합니다. 언제나 <strong>원활한 소통</strong>을 통해 진행 상황을 투명하게 공유하며, 사건 완료 후에도 <strong>철저한 사후 관리</strong>로 안심하실 수 있도록 돕습니다. 합리적이고 <strong>부담 없는 법무 비용</strong>으로 최고의 서비스를 제공하겠습니다.</p>
+      </div>
+    </section>
 
+    <section>
+      <h2>문의하기</h2>
+      <ul>
+        <li><strong>전화</strong>: <a href="tel:01032658230">010-3265-8230</a></li>
+        <li><strong>이메일</strong>: <a href="mailto:freelaw8230@gmail.com">freelaw8230@gmail.com</a></li>
+        <li><strong>간편 상담 신청</strong>: 블로그 제작 후 주소 연결 예정</li>
+      </ul>
+    </section>
+
+    <footer>
+      © 법무사 김중희 사무소 · 이희준 사무장
+    </footer>
+  </div>
 </body>
 </html>
