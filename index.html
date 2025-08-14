@@ -35,7 +35,8 @@
     /* 헤더 */
     header { display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center; }
     .brand-top { display:flex; align-items:center; gap:12px; }
-    .logo-mark { width:44px; height:44px; display:inline-block; background:var(--gold); -webkit-mask:url('/promo/assets/법무사마크_transparent.png') center/contain no-repeat; mask:url('/promo/assets/법무사마크_transparent.png') center/contain no-repeat; }
+    .logo { width: clamp(53px, 5.6vw, 69px); height: clamp(53px, 5.6vw, 69px); display:inline-flex; align-items:center; justify-content:center; }
+    .logo svg { width:100%; height:100%; display:block; }
     .brand-office { color: var(--gold); font-weight: 900; line-height:1; white-space: nowrap; font-size: clamp(26px, 4.2vw, 48px); }
     .brand-manager { color: var(--text); opacity:.95; font-weight:700; line-height:1; white-space: nowrap; font-size: clamp(20px, 3.2vw, 38px); }
     .tagline { font-family: 'Pretendard', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-weight:600; color: var(--muted); white-space: nowrap; font-size: clamp(14px, 2vw, 18px); }
@@ -126,9 +127,36 @@
 <body>
   <div class="wrap">
     <header>
-      <!-- 윗줄: 로고 + 사무소명 (마스크 방식 적용) -->
+      <!-- 윗줄: 로고 + 사무소명 -->
       <div class="brand-top">
-        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo" aria-hidden="true">
+          <!-- 정제된 라인 아이콘 스타일의 법무사 마크 (골드 그라데이션) -->
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="법무사 마크" role="img">
+            <defs>
+              <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#cdb688"/>
+                <stop offset="100%" stop-color="#af9268"/>
+              </linearGradient>
+            </defs>
+            <g fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 이중 원형 링 -->
+              <circle cx="32" cy="32" r="30"/>
+              <circle cx="32" cy="32" r="24" opacity=".28"/>
+              <!-- 중심 기둥과 횃대 -->
+              <path d="M32 18v20"/>
+              <path d="M20 24h24"/>
+              <!-- 좌측 체인 & 접시 -->
+              <path d="M24 24 21 30 27 30 24 24"/>
+              <path d="M19 30c2.2 4 9.8 4 12 0"/>
+              <!-- 우측 체인 & 접시 -->
+              <path d="M40 24 37 30 43 30 40 24"/>
+              <path d="M35 30c2.2 4 9.8 4 12 0"/>
+              <!-- 받침대 -->
+              <path d="M26 44h12"/>
+              <path d="M24 48h16" opacity=".7"/>
+            </g>
+          </svg>
+        </span>
         <div class="brand-office">법무사 김중희 사무소</div>
       </div>
       <!-- 아랫줄: 이희준 사무장 -->
@@ -200,6 +228,7 @@
         <h3 class="cta-title">맞춤형 등기·민사 솔루션 상담</h3>
         <div class="cta-grid">
           <a class="cta-card" href="tel:010-3265-8230">
+            <svg class="cta-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5c5 8 11 14 19 16-1 2-3 2-5 1-3-1-6-4-9-7s-6-6-7-9c-1-2-1-4 1-5 2 8 8 14 16 19" opacity="0"/></svg>
             <svg class="cta-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h4l3 5-3 2c1 2 3 4 5 5l2-3 5 3v4c0 1-1 2-2 2-9 0-18-9-18-18 0-1 1-2 2-2z"/></svg>
             <span class="nowrap">전화 연결</span>
           </a>
