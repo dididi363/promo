@@ -120,9 +120,9 @@
     .cta-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; }
     @media (max-width: 720px){ .cta-grid { grid-template-columns: 1fr; } }
 
-    .cta-card { display:flex; align-items:center; justify-content:center; gap:10px; padding:16px; border-radius:14px; border:1px solid rgba(175,146,104,.55); text-decoration:none; font-family:'Pretendard',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; font-weight:700; letter-spacing:.01em; background: rgba(255,255,255,.04); color:var(--text); }
+    .cta-card { display:flex; align-items:center; justify-content:center; gap:10px; padding:16px; border-radius:14px; border:1px solid rgba(175,146,104,.55); text-decoration:none; font-family:'Pretendard',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; font-weight:700; letter-spacing:.01em; background: rgba(255,255,255,.04); color:var(--text); text-align:center; }
     .cta-card:hover { transform: translateY(-1px); box-shadow: 0 10px 20px rgba(0,0,0,.25); }
-    .cta-ico { width:22px; height:22px; stroke: var(--gold); fill:none; stroke-width:2; }
+    .cta-ico { width:22px; height:22px; stroke: var(--gold); fill:none; stroke-width:2; flex:0 0 auto; }
 
     /* 푸터 */
     footer { margin-top: 42px; padding-top: 22px; border-top: 1px solid rgba(175,146,104,.28); text-align:center; }
@@ -211,7 +211,6 @@
         <h3 class="cta-title">맞춤형 등기·민사 솔루션 상담</h3>
         <div class="cta-grid">
           <a class="cta-card" href="tel:010-3265-8230">
-            <svg class="cta-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5c5 8 11 14 19 16-1 2-3 2-5 1-3-1-6-4-9-7s-6-6-7-9c-1-2-1-4 1-5 2 8 8 14 16 19" opacity="0"/></svg>
             <svg class="cta-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h4l3 5-3 2c1 2 3 4 5 5l2-3 5 3v4c0 1-1 2-2 2-9 0-18-9-18-18 0-1 1-2 2-2z"/></svg>
             <span class="nowrap">전화 연결</span>
           </a>
