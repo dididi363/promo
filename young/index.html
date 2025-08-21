@@ -15,9 +15,7 @@
     *{ box-sizing:border-box }
     html,body{ height:100% }
     body{
-      margin:0;
-      background: var(--bg-2);
-      color:var(--text);
+      margin:0; background: var(--bg-2); color:var(--text);
       font-family:'Noto Serif KR',serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; letter-spacing:.02em;
     }
     .bg-fixed{ position:fixed; inset:0; z-index:0; pointer-events:none;
@@ -70,7 +68,7 @@
 
     .cta{ display:grid; grid-template-columns:1fr; gap:16px; background:linear-gradient(180deg,rgba(15,32,50,.85),rgba(11,21,34,.85)); border:1px solid rgba(175,146,104,.4);
       border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); }
-    .cta-title{ color:var(--gold); font-weight:900; font-size:clamp(18px,2.6vw,24px); margin:0 0 6px; white-space:nowrap; }
+    .cta-title{ color:var(--gold); font-weight:900; font-size:clamp(18px,2.6vw,24px); margin:0 0 6px; white-space:nowrap; text-align:center; }
     .cta-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
     @media (max-width:720px){ .cta-grid{ grid-template-columns:1fr; } }
     .cta-card{ display:flex; align-items:center; justify-content:center; gap:10px; padding:16px; border-radius:14px; border:1px solid rgba(175,146,104,.55); text-decoration:none;
@@ -96,9 +94,10 @@
         <div class="brand-office">법무사 김중희 사무소</div>
       </div>
       <div class="brand-manager">이용진 대리</div>
-      <div class="tagline">법인·부동산 등기 · 민사 사건 · 공탁 · 압류 · 처분 절차 전문</div>
+      <div class="tagline">법인·부동산 등기 · 민사 사건 · 공탁 · 압류 · 처분 절차</div>
     </header>
 
+    <!-- 주요 서비스 -->
     <section aria-labelledby="svc">
       <div class="section-title"><span class="bar"></span><h2 id="svc">주요 서비스</h2><span class="bar"></span></div>
       <div class="cards">
@@ -113,7 +112,6 @@
             <div class="card-line">신탁 등</div>
           </div>
         </article>
-
         <article class="card">
           <div class="card-head">
             <svg class="cta-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V5a2 2 0 0 1 2-2h5v18H5a2 2 0 0 1-2-2z"/><path d="M10 3h9a2 2 0 0 1 2 2v16H10z"/></svg>
@@ -125,7 +123,6 @@
             <div class="card-line">회사계속, 해산·청산, 합병·분할 등</div>
           </div>
         </article>
-
         <article class="card card--wide">
           <div class="card-head">
             <svg class="cta-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M7 7 5 11h4L7 7"/><path d="M17 7l-2 4h4l-2-4"/><path d="M8 19h8"/></svg>
@@ -138,6 +135,19 @@
       </div>
     </section>
 
+    <!-- 차별화 포인트 (아버지 페이지와 동일) -->
+    <section aria-labelledby="diff">
+      <div class="section-title"><span class="bar"></span><h2 id="diff">차별화 포인트</h2><span class="bar"></span></div>
+      <div class="pill-row" aria-label="핵심 가치">
+        <div class="pill">친절 상담</div>
+        <div class="pill">신속·정확</div>
+        <div class="pill">원활한 소통</div>
+        <div class="pill">철저한 고객관리</div>
+        <div class="pill">합리적 비용</div>
+      </div>
+    </section>
+
+    <!-- 상담 안내 -->
     <section aria-labelledby="contact">
       <div class="section-title"><span class="bar"></span><h2 id="contact">상담 안내</h2><span class="bar"></span></div>
       <div class="cta">
