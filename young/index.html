@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>법무사 김중희 사무소 · 이용진 대리 | 등기·민사 전문</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0d1b2a; --bg-2:#0b1522; --gold:#af9268; --text:#e8edf2; --muted:#a6b1c2;
+      --card:#0f2032; --radius:20px; --maxw:1120px; --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{ box-sizing:border-box }
+    html,body{ height:100% }
+    body{
+      margin:0;
+      background: var(--bg-2); /* 스크롤해도 변하지 않도록 단색 */
+      color:var(--text);
+      font-family:'Noto Serif KR',serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; letter-spacing:.02em;
+    }
+    /* 고정 그라디언트 레이어 */
+    .bg-fixed{ position:fixed; inset:0; z-index:0; pointer-events:none;
+      background: radial-gradient(1200px 800px at 20% -10%, #15263b 0%, var(--bg) 45%, var(--bg-2) 100%);
+    }
+
+    .wrap{ max-width:var(--maxw); margin:0 auto; padding:40px 20px 80px; position:relative; z-index:1; }
+
+    /* 헤더 */
+    header{ display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center; }
+    .brand-top{ display:flex; align-items:center; gap:12px; }
+    .logo-box{ width:clamp(76px, 8vw, 98px); height:clamp(76px, 8vw, 98px); display:inline-block; position:relative; }
+    .logo-mark{ width:100%; height:100%; display:block; background:var(--gold);
+      -webkit-mask:url('/promo/assets/법무사마크_transparent.png?v=3') center/contain no-repeat;
+              mask:url('/promo/assets/법무사마크_transparent.png?v=3') center/contain no-repeat;
+      image-rendering:-webkit-optimize-contrast; image-rendering:crisp-edges;
+    }
+    /* 마스크 미지원·경로 이슈 시 PNG 직접 노출 */
+    .logo-img{ width:100%; height:100%; display:none; object-fit:contain; }
+    @supports not ((-webkit-mask:url('x')) or (mask:url('x'))) { .logo-mark{ display:none; } .logo-img{ display:block; } }
+
+    .brand-office{ color:var(--gold); font-weight:900; line-height:1; white-space:nowrap; font-size:clamp(26px,4.2vw,48px); }
+    .brand-manager{ color:var(--text); opacity:.95; font-weight:700; line-height:1; white-space:nowrap; font-size:clamp(20px,3.2vw,38px); }
+    .tagline{ font-family:'Pretendard',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; font-weight:600; color:var(--muted); white-space:nowrap; font-size:clamp(14px,2vw,18px); }
+
+    /* 섹션 공통 */
+    section{ margin-top:44px; }
+    .section-title{ display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:22px; }
+    .section-title .bar{ width:56px; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+    .section-title h2{ margin:0; font-size:clamp(18px,2.6vw,24px); font-weight:700; letter-spacing:.02em; white-space:nowrap; }
+
+    /* 서비스 카드 (2단 + 하단 와이드) */
+    .cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; align-items:stretch; }
+    @media (max-width:980px){ .cards{ grid-template-columns:1fr; } }
+
+    .card{ background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02)); border:1px solid rgba(175,146,104,.38);
+      border-radius:var(--radius); box-shadow:var(--shadow); padding:24px 22px; transition:.3s; display:flex; flex-direction:column; gap:12px; height:100%; }
+    .card:hover{ transform:translateY(-2px); box-shadow:0 14px 36px rgba(0,0,0,.35); border-color:rgba(175,146,104,.7); }
+    .card-head{ display:flex; align-items:center; gap:14px; }
+    .card-title{ color:var(--gold); font-size:clamp(18px,2.2vw,22px); font-weight:800; white-space:nowrap; }
+    /* 이모지 제거 → 라인 아이콘 스타일 */
+    .cta-ico{ width:22px; height:22px; stroke:var(--gold); fill:none; stroke-width:2; flex:0 0 auto; }
+
+    .card-body{ margin-top:2px; display:flex; flex-direction:column; gap:8px; }
+
+    .card-line{ display:block; font-family:'Pretendard',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; font-weight:600; font-size:clamp(14px,1.8vw,16px);
+      line-height:1.5; color:var(--text); background:rgba(255,255,255,.03); border:1px dashed rgba(175,146,104,.35);
+      padding:10px 12px; border-radius:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+    /* 여러 줄 허용 블록(민사 사건) */
+    .card-multiline{ white-space:normal; word-break:keep-all; overflow-wrap:anywhere; line-height:1.6; padding:12px 14px; border-radius:14px; }
+    .card--wide{ grid-column:1 / -1; }
+
+    /* 차별화 포인트 */
+    .pill-row{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+    .pill{ white-space:nowrap; background:var(--gold); color:#0a0f18; font-weight:800; border-radius:999px; padding:10px 16px;
+      box-shadow:inset 0 0 0 2px rgba(255,255,255,.15), 0 8px 20px rgba(0,0,0,.25); font-size:clamp(13px,1.6vw,15px); }
+
+    /* 상담 안내 */
+    .cta{ display:grid; grid-template-columns:1fr; gap:16px; background:linear-gradient(180deg,rgba(15,32,50,.85),rgba(11,21,34,.85)); border:1px solid rgba(175,146,104,.4);
+      border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); }
+    .cta-title{ color:var(--gold); font-weight:900; font-size:clamp(18px,2.6vw,24px); margin:0 0 6px; white-space:nowrap; }
+    .cta-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    @media (max-width:720px){ .cta-grid{ grid-template-columns:1fr; } }
+    .cta-card{ display:flex; align-items:center; justify-content:center; gap:10px; padding:16px; border-radius:14px; border:1px solid rgba(175,146,104,.55); text-decoration:none;
+      font-family:'Pretendard',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; font-weight:700; letter-spacing:.01em; background:rgba(255,255,255,.04); color:var(--text); text-align:center; }
+    .cta-card:hover{ transform:translateY(-1px); box-shadow:0 10px 20px rgba(0,0,0,.25); }
+
+    /* 푸터 */
+    footer{ margin-top:42px; padding-top:22px; border-top:1px solid rgba(175,146,104,.28); text-align:center; }
+    .contact-row{ font-family:'Pretendard',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; font-weight:600; color:var(--text); opacity:.95; }
+    .contact-row .sep{ opacity:.45; margin:0 8px; }
+    .nowrap{ white-space:nowrap; }
+  </style>
+</head>
+<body>
+  <div class="bg-fixed" aria-hidden="true"></div>
+  <div class="wrap">
+    <header>
+      <!-- 윗줄: 로고 + 사무소명 (마스크 + 폴백) -->
+      <div class="brand-top">
+        <span class="logo-box" role="img" aria-label="법무사 마크">
+          <span class="logo-mark"></span>
+          <img class="logo-img" src="/promo/assets/법무사마크_transparent.png?v=3" alt="법무사 마크" />
+        </span>
+        <div class="brand-office">법무사 김중희 사무소</div>
+      </div>
+      <!-- 아랫줄: 이용진 대리 -->
+      <div class="brand-manager">이용진 대리</div>
+      <div class="tagline">법인·부동산 등기 · 민사 사건 · 공탁 · 압류 · 처분 절차 전문</div>
+    </header>
+
+    <!-- 주요 서비스: 2단(부동산/법인) + 하단 와이드(민사) -->
+    <section aria-labelledby="svc">
+      <div class="section-title"><span class="bar"></span><h2 id="svc">주요 서비스</h2><span class="bar"></span></div>
+      <div class="cards">
+        <!-- 부동산 등기 -->
+        <article class="card">
+          <div class="card-head">
+            <svg class="cta-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-6 9 6v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="M9 22V12h6v10"/></svg>
+            <div class="card-title">부동산 등기</div>
+          </div>
+          <div class="card-body">
+            <div class="card-line">소유권 이전(매매, 상속, 증여)</div>
+            <div class="card-line">설정, 말소(근저당권, 전세권, 가등기)</div>
+            <div class="card-line">신탁 등</div>
+          </div>
+        </article>
+        <!-- 법인 등기 -->
+        <article class="card">
+          <div class="card-head">
+            <svg class="cta-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V5a2 2 0 0 1 2-2h5v18H5a2 2 0 0 1-2-2z"/><path d="M10 3h9a2 2 0 0 1 2 2v16H10z"/></svg>
+            <div class="card-title">법인 등기</div>
+          </div>
+          <div class="card-body">
+            <div class="card-line">설립(주식회사·유한·비영리)</div>
+            <div class="card-line">변경(자본금·임원·목적·상호·본점·지점·주식)</div>
+            <div class="card-line">회사계속, 해산·청산, 합병·분할 등</div>
+          </div>
+        </article>
+        <!-- 민사 사건 (하단 와이드) -->
+        <article class="card card--wide">
+          <div class="card-head">
+            <svg class="cta-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M7 7 5 11h4L7 7"/><path d="M17 7l-2 4h4l-2-4"/><path d="M8 19h8"/></svg>
+            <div class="card-title">민사 사건</div>
+          </div>
+          <div class="card-body">
+            <div class="card-line card-multiline">보전처분(가압류·가처분·재산명시·조회·채무불이행자명부), 지급명령, 제소전화해, 민사·고소·행정심판·행정소송, 강제·임의경매, 채권압류·추심·전부, 한정승인·상속포기, 개인회생·파산·면책, 각종 공탁</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 차별화 포인트 -->
+    <section aria-labelledby="diff">
+      <div class="section-title"><span class="bar"></span><h2 id="diff">차별화 포인트</h2><span class="bar"></span></div>
+      <div class="pill-row" aria-label="핵심 가치">
+        <div class="pill">친절 상담</div>
+        <div class="pill">신속·정확</div>
+        <div class="pill">원활한 소통</div>
+        <div class="pill">철저한 고객관리</div>
+        <div class="pill">합리적 비용</div>
+      </div>
+    </section>
+
+    <!-- 상담 안내 -->
+    <section aria-labelledby="contact">
+      <div class="section-title"><span class="bar"></span><h2 id="contact">상담 안내</h2><span class="bar"></span></div>
+      <div class="cta">
+        <h3 class="cta-title">맞춤형 등기·민사 솔루션 상담</h3>
+        <div class="cta-grid">
+          <a class="cta-card" href="tel:010-3432-8230">
+            <svg class="cta-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h4l3 5-3 2c1 2 3 4 5 5l2-3 5 3v4c0 1-1 2-2 2-9 0-18-9-18-18 0-1 1-2 2-2z"/></svg>
+            <span class="nowrap">전화 연결</span>
+          </a>
+          <a class="cta-card" href="mailto:dididi363@naver.com">
+            <svg class="cta-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" ry="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <span class="nowrap">메일 연결</span>
+          </a>
+          <a class="cta-card" href="https://dididi363.github.io/promo/" target="_blank" rel="noopener">
+            <svg class="cta-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2" ry="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
+            <span class="nowrap">블로그 연결</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+      <div class="contact-row" aria-label="연락처 상단">
+        <span class="nowrap">핸드폰 010-3432-8230</span><span class="sep">│</span>
+        <span class="nowrap">사무실 02-537-0662</span><span class="sep">│</span>
+        <span class="nowrap">팩스 02-2178-9493</span><span class="sep">│</span>
+        <span class="nowrap">메일 dididi363@naver.com</span>
+      </div>
+      <div class="contact-row" aria-label="연락처 하단">
+        <span class="nowrap">법무사 김중희 사무소</span><span class="sep">│</span>
+        <span>서울특별시 서초구 서초대로50길 62-5, 401호(서초동, 충신빌딩)</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
